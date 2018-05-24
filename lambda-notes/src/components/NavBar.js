@@ -1,26 +1,28 @@
-import React from 'react';
-import './NavBar.css';
-import { Button } from 'reactstrap';
-import { Route, Link } from 'react-router-dom';
-import NoteList from './NoteList';
-import NoteForm from './NoteForm';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css'
 
-const NavBar = () => {
-    return (
-        <div>
+class NavBar extends Component {
+    render() {
+        return (
             <div>
-                <h2>Lambda Notes</h2>
-                <Link to='/'>
-                    <Button>View Your Notes</Button>
-                </Link>
-                <br />
-                <Link to='note-form'>
-                    <Button>+Create New Note</Button>
-                </Link>
-            </div>
-        </div>
-    )
+                <div className="nav-bar">
+                    <h1 className="app-name">
+                        Lambda Notes
+                    </h1>
+                    <br />
+                    <div className="app-links">
+                        <Link to="/" style={{ textDecoration: "none" }}>
+                            <button className="button1">View Notes</button>
+                        </Link>
+                        <Link to="/create" style={{ textDecoration: "none" }}>
+                            <button className="button2"> Create New Note</button>    
+                        </Link>
+                    </div>
+                </div>
+            </div>                
+        );
+    }   
 }
 
-
-export default NavBar;
+export default NavBar; 
